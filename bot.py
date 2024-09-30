@@ -1,11 +1,9 @@
 from pyrogram import Client, __version__
-
 from config import Config
 from config import LOGGER
-
 from user import User
 import pyromod.listen
-
+from pyrogram.enums import ParseMode  # Import ParseMode
 
 class Bot(Client):
     USER: User = None
@@ -20,16 +18,16 @@ class Bot(Client):
                 "root": "plugins"
             },
             workers=10,
-            bot_token=Config.BOT_TOKEN
+            bot_token=Config.BOT_TOKEN,
+            parse_mode=ParseMode.HTML  # Set ParseMode to HTML here
         )
         self.LOGGER = LOGGER
 
     async def start(self):
         await super().start()
         usr_bot_me = await self.get_me()
-        self.set_parse_mode("HTML")
         self.LOGGER(__name__).info(
-            f"@{usr_bot_me.username}  started! "
+            f"@{usr_bot_me.username} started!"
         )
         self.USER, self.USER_ID = await User().start()
 
