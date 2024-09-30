@@ -9,6 +9,7 @@ import random
 from pyrogram.errors.exceptions.bad_request_400 import FileReferenceEmpty, FileReferenceExpired, MediaEmpty
 import pytz
 from datetime import datetime
+
 from pyrogram.enums import ParseMode
 
 IST = pytz.timezone('Asia/Kolkata')
@@ -82,7 +83,7 @@ async def forward(bot, message):
                         await bot.copy_message(
                             chat_id=chat_id,
                             from_chat_id=channel,
-                            parse_mode=ParseMode.html,
+                            parse_mode=enums.ParseMode.MD,
                             caption=caption,
                             message_id=message_id
                             )
@@ -107,7 +108,7 @@ async def forward(bot, message):
                         await bot.copy_message(
                             chat_id=chat_id,
                             from_chat_id=channel,
-                            parse_mode=ParseMode.html,
+                            parse_mode=enums.ParseMode.MD,
                             caption=caption,
                             message_id=message_id
                             )
@@ -211,7 +212,7 @@ async def forward(bot, message):
                                         await bot.USER.copy_message(
                                             chat_id=chat_id,
                                             from_chat_id=channel,
-                                            parse_mode=ParseMode.html,
+                                            parse_mode=enums.ParseMode.MD,
                                             caption=caption,
                                             message_id=message_id
                                             )
