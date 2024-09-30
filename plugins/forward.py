@@ -82,7 +82,7 @@ async def forward(bot, message):
                         await bot.copy_message(
                             chat_id=chat_id,
                             from_chat_id=channel,
-                            parse_mode=ParseMode.MARKDOWN,
+                            parse_mode=ParseMode.HTML,
                             caption=caption,
                             message_id=message_id
                             )
@@ -107,7 +107,7 @@ async def forward(bot, message):
                         await bot.copy_message(
                             chat_id=chat_id,
                             from_chat_id=channel,
-                            parse_mode=ParseMode.MARKDOWN,
+                            parse_mode=ParseMode.HTML,
                             caption=caption,
                             message_id=message_id
                             )
@@ -211,7 +211,7 @@ async def forward(bot, message):
                                         await bot.USER.copy_message(
                                             chat_id=chat_id,
                                             from_chat_id=channel,
-                                            parse_mode=ParseMode.MARKDOWN,
+                                            parse_mode=ParseMode.HTML,
                                             caption=caption,
                                             message_id=message_id
                                             )
