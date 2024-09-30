@@ -1,3 +1,4 @@
+from telegram.constants import ParseMode
 from config import Config
 from pyrogram import Client, emoji, filters
 from database import get_search_results
